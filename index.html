@@ -1,0 +1,136 @@
+
+                <!DOCTYPE html>
+                <html lang="ar">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <style></style>
+                </head>
+                <body>
+                    <!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شارك الرابط واربح</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+
+        body {
+            font-family: 'Amiri', serif;
+            text-align: center;
+            background-color: #f6911d; /* لون الخلفية البرتقالي */
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: red;
+            text-shadow: 1px 1px 2px black;
+            font-family: 'Amiri', serif;
+            font-size: 18px; /* تصغير حجم الخط */
+        }
+        .container {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .btn {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .counter {
+            font-size: 24px;
+            margin: 20px 0;
+            color: blue;
+            font-weight: bold;
+        }
+        .congrats {
+            font-size: 28px;
+            margin: 20px 0;
+            color: green;
+            font-weight: bold;
+            display: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .highlighted-text {
+            font-family: 'Amiri', serif;
+            color: white;
+            font-size: 20px;
+            background-color: red; /* خلفية حمراء */
+            padding: 10px;
+            border-radius: 5px;
+            text-shadow: 2px 2px 4px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🥳🥳🥳 شارك الرابط مع 10 أشخاص عبر الواتساب وادخل السحب على جوائز مالية بقيمة 5 مليون ريال 🥳🥳🥳</h1>
+        <img src="https://i.ibb.co/6Z8tpw1/FB-IMG-1720899894259.jpg" alt="قحطاني تيليكوم">
+        <p class="highlighted-text">ادخل رقمك لنتواصل معك إذا ربحت</p>
+        <input type="text" id="phone" placeholder="أدخل رقم الهاتف">
+        <br>
+        <button class="btn" onclick="startSharing()">موافق</button>
+        <div id="share-section" style="display:none;">
+            <button class="btn" onclick="shareLink()">شارك الرابط</button>
+            <div class="counter" id="counter">يتبقى 10</div>
+            <div class="congrats" id="congrats">مبروووووك! لقد دخلت السحب معنا 🥳🥳🥳 سيتم التواصل معك لاحقاً</div>
+            <audio id="applause">
+                <source src="https://www.soundjay.com/human/applause-6.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    
+    <script>
+        let shareCount = 10;
+        let applauseSound = new Audio('https://www.soundjay.com/human/applause-6.wav');
+
+        function startSharing() {
+            document.getElementById('share-section').style.display = 'block';
+        }
+
+        function shareLink() {
+            let phone = document.getElementById('phone').value;
+            if(phone) {
+                let url = "https://api.whatsapp.com/send?text=" + encodeURIComponent("*🥳🥳شارك وربح مع محفظة جوالي🥳🥳*\n*السحب على جوائز بقيمة 5 مليون ريال*\n*https://bit.ly/3S2fqEY رابط المشاركه 👈*");
+                window.open(url, '_blank');
+                if (shareCount > 1) {
+                    document.getElementById('counter').textContent = "يتبقى " + (shareCount - 1);
+                } else if (shareCount === 1) {
+                    document.getElementById('counter').textContent = "انتهى العدد";
+                    document.getElementById('congrats').style.display = 'block';
+                    applauseSound.play();
+                }
+                shareCount--;
+            } else {
+                alert('يرجى إدخال رقم الهاتف.');
+            }
+        }
+    </script>
+</body>
+</html>
+                    <script></script>
+                </body>
+                </html>
+            
